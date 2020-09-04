@@ -15,7 +15,7 @@ import {
 	__experimentalUseEditorFeature as useEditorFeature,
 } from '@wordpress/block-editor';
 import { Icon, brush } from '@wordpress/icons';
-import { removeFormat, registerFormatType } from '@wordpress/rich-text';
+import { removeFormat } from '@wordpress/rich-text';
 
 /**
  * Internal dependencies
