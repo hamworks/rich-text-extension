@@ -1,5 +1,5 @@
 {
-    "name": "@hamworks/richi-text-colors",
+    "name": "@hamworks/richi-text-extension",
     "version": "0.0.3",
     "author": "Hiroshi Urabe <urabe@ham.works> (https://ham.works)",
     "dependencies": {
@@ -18,14 +18,14 @@
     "main": "build/index.js",
     "release-it": {
         "hooks": {
-            "before:bump": "bash ./bin/build.sh richi-text-colors ${version}",
-            "after:bump": "bash ./bin/create-zip.sh richi-text-colors",
-            "after:release": "bash ./bin/cleanup.sh richi-text-colors"
+            "before:bump": "bash ./bin/build.sh richi-text-extension ${version}",
+            "after:bump": "bash ./bin/create-zip.sh richi-text-extension",
+            "after:release": "bash ./bin/cleanup.sh richi-text-extension"
         },
         "github": {
             "release": true,
             "assets": [
-                "richi-text-colors.zip"
+                "richi-text-extension.zip"
             ]
         },
         "npm": {
@@ -33,7 +33,7 @@
         }
     },
     "repository": {
-        "url": "git@github.com:team-hamworks/richi-text-colors.git",
+        "url": "git@github.com:team-hamworks/richi-text-extension.git",
         "type": "git"
     },
     "scripts": {
@@ -47,8 +47,8 @@
         "start": "wp-scripts start"
     },
     "wp-env": {
-        "plugin-dir": "richi-text-colors",
-        "plugin-name": "richi-text-colors",
+        "plugin-dir": "richi-text-extension",
+        "plugin-name": "richi-text-extension",
         "welcome-build-command": "npm run start"
     }
 }
