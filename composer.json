@@ -1,0 +1,21 @@
+{
+  "name": "hamworks/rich-text-colors",
+  "description": "rich-text-colors",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Hiroshi Urabe",
+      "email": "mail@torounit.com"
+    }
+  ],
+  "require": {
+    "php":">=7.0",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.3",
+    "dealerdirect/phpcodesniffer-composer-installer": "*",
+    "wp-coding-standards/wpcs": "^1.1"
+  }
+}
