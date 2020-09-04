@@ -6,7 +6,8 @@
         "@wordpress/block-editor": "^4.4.0",
         "@wordpress/icons": "^2.5.0",
         "@wordpress/rich-text": "^3.21.0",
-        "lodash": "^4.17.20"
+        "lodash": "^4.17.20",
+        "tinycolor2": "^1.4.1"
     },
     "devDependencies": {
         "@wordpress/browserslist-config": "2.7.0",

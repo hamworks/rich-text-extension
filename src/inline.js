@@ -38,7 +38,6 @@ export function getActiveColor( formatName, formatValue, colors ) {
 			/.*has-([^\s]*)-background-color.*/,
 			'$1'
 		);
-		console.log(getColorObjectByAttributeValues( colors, colorSlug ).color);
 		return getColorObjectByAttributeValues( colors, colorSlug ).color;
 	}
 }
@@ -95,14 +94,14 @@ const ColorPicker = ( { name, value, onChange } ) => {
 						type: name,
 						attributes: colorObject
 							? {
-								class: getColorClassName(
-									'background-color',
-									colorObject.slug
-								),
-							}
+									class: getColorClassName(
+										'background-color',
+										colorObject.slug
+									),
+							  }
 							: {
-								style: `background-color:${ color }`,
-							},
+									style: `background-color:${ color }`,
+							  },
 					} )
 				);
 			} else {

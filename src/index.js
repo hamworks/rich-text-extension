@@ -2,6 +2,7 @@
  * External dependencies
  */
 import { get, isEmpty } from 'lodash';
+import tinycolor from 'tinycolor2';
 
 /**
  * WordPress dependencies
@@ -13,7 +14,7 @@ import {
 	RichTextToolbarButton,
 	__experimentalUseEditorFeature as useEditorFeature,
 } from '@wordpress/block-editor';
-import { Icon, textColor as textColorIcon, brush } from '@wordpress/icons';
+import { Icon, brush } from '@wordpress/icons';
 import { removeFormat, registerFormatType } from '@wordpress/rich-text';
 
 /**
@@ -21,13 +22,12 @@ import { removeFormat, registerFormatType } from '@wordpress/rich-text';
  */
 import { default as InlineColorUI, getActiveColor } from './inline';
 
-const name = 'rich-text-background-colors/text-background-color';
+const name = 'rich-text-colors/text-background-color';
 const title = __( 'Text Background Color' );
 
 const EMPTY_ARRAY = [];
 
 function TextColorEdit( { value, onChange, isActive, activeAttributes } ) {
-
 	const allowCustomControl = useEditorFeature( 'color.custom' );
 	const { colors } = useSelect( ( select ) => {
 		const blockEditorSelect = select( 'core/block-editor' );
@@ -38,7 +38,7 @@ function TextColorEdit( { value, onChange, isActive, activeAttributes } ) {
 			settings = {};
 		}
 		return {
-			backgroundColor: get( settings, [ 'colors' ], EMPTY_ARRAY ),
+			colors: get( settings, [ 'colors' ], EMPTY_ARRAY ),
 		};
 	} );
 	const [ isAddingColor, setIsAddingColor ] = useState( false );
@@ -48,18 +48,18 @@ function TextColorEdit( { value, onChange, isActive, activeAttributes } ) {
 	const disableIsAddingColor = useCallback( () => setIsAddingColor( false ), [
 		setIsAddingColor,
 	] );
+
 	const colorIndicatorStyle = useMemo( () => {
 		const activeColor = getActiveColor( name, value, colors );
-		console.log(activeColor)
 		if ( ! activeColor ) {
 			return undefined;
 		}
+		const tinyActiveColor = tinycolor( activeColor );
 		return {
+			color: tinyActiveColor.isDark() ? '#fff' : 'inherit',
 			backgroundColor: activeColor,
 		};
 	}, [ value, colors ] );
-
-	console.log(colorIndicatorStyle)
 
 	const hasColorsToChoose = ! isEmpty( colors ) || ! allowCustomControl;
 	if ( ! hasColorsToChoose && ! isActive ) {
@@ -72,22 +72,17 @@ function TextColorEdit( { value, onChange, isActive, activeAttributes } ) {
 				className="format-library-text-background-color-button"
 				icon={
 					<>
-						<Icon icon={ brush } />
-						{ isActive && (
-							<span
-								className="format-library-text-background-color-button__indicator"
-								style={ colorIndicatorStyle }
-							/>
-						) }
+						<Icon icon={ brush } style={ colorIndicatorStyle } />
 					</>
 				}
-				title={title}
+				title={ title }
 				// If has no colors to choose but a color is active remove the color onClick
 				onClick={
 					hasColorsToChoose
 						? enableIsAddingColor
 						: () => onChange( removeFormat( value, name ) )
 				}
+				isActive={ isActive }
 			/>
 			{ isAddingColor && (
 				<InlineColorUI
@@ -114,6 +109,5 @@ export const textColor = {
 	},
 	edit: TextColorEdit,
 };
-
 
 registerFormatType( name, textColor );
