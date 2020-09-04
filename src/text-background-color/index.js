@@ -22,7 +22,7 @@ import { removeFormat, registerFormatType } from '@wordpress/rich-text';
  */
 import { default as InlineColorUI, getActiveColor } from './inline';
 
-const name = 'rich-text-colors/text-background-color';
+const name = 'rich-text-extension/text-background-color';
 const title = __( 'Text Background Color' );
 
 const EMPTY_ARRAY = [];

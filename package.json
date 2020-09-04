@@ -1,5 +1,5 @@
 {
-    "name": "@hamworks/richi-text-extension",
+    "name": "@hamworks/rich-text-extension",
     "version": "0.0.3",
     "author": "Hiroshi Urabe <urabe@ham.works> (https://ham.works)",
     "dependencies": {
@@ -18,14 +18,14 @@
     "main": "build/index.js",
     "release-it": {
         "hooks": {
-            "before:bump": "bash ./bin/build.sh richi-text-extension ${version}",
-            "after:bump": "bash ./bin/create-zip.sh richi-text-extension",
-            "after:release": "bash ./bin/cleanup.sh richi-text-extension"
+            "before:bump": "bash ./bin/build.sh rich-text-extension ${version}",
+            "after:bump": "bash ./bin/create-zip.sh rich-text-extension",
+            "after:release": "bash ./bin/cleanup.sh rich-text-extension"
         },
         "github": {
             "release": true,
             "assets": [
-                "richi-text-extension.zip"
+                "rich-text-extension.zip"
             ]
         },
         "npm": {
@@ -33,7 +33,7 @@
         }
     },
     "repository": {
-        "url": "git@github.com:team-hamworks/richi-text-extension.git",
+        "url": "git@github.com:team-hamworks/rich-text-extension.git",
         "type": "git"
     },
     "scripts": {
@@ -47,8 +47,8 @@
         "start": "wp-scripts start"
     },
     "wp-env": {
-        "plugin-dir": "richi-text-extension",
-        "plugin-name": "richi-text-extension",
+        "plugin-dir": "rich-text-extension",
+        "plugin-name": "rich-text-extension",
         "welcome-build-command": "npm run start"
     }
 }

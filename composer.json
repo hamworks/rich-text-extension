@@ -1,6 +1,6 @@
 {
-  "name": "hamworks/rich-text-colors",
-  "description": "rich-text-colors",
+  "name": "hamworks/rich-text-extension",
+  "description": "rich-text-extension",
   "type": "wordpress-plugin",
   "license": "GPL-2.0+",
   "authors": [
