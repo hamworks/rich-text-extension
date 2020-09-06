@@ -9,6 +9,7 @@ fi
 
 pluginname=$1
 
-cd ./nightly/
+cd distribution
 zip -r ../${pluginname}.zip ./
 cd ../
+rm -rf distribution

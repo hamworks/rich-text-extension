@@ -9,5 +9,5 @@ fi
 
 name=$1
 
-rm -rf nightly
+rm -rf distribution
 rm ${name}.zip

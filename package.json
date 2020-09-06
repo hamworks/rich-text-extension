@@ -1,6 +1,6 @@
 {
     "name": "@hamworks/rich-text-extension",
-    "version": "0.0.3",
+    "version": "0.0.0",
     "author": "Hiroshi Urabe <urabe@ham.works> (https://ham.works)",
     "dependencies": {
         "@wordpress/block-editor": "^4.4.0",
@@ -18,10 +18,10 @@
     "main": "build/index.js",
     "release-it": {
         "hooks": {
-            "before:bump": "bash ./bin/build.sh rich-text-extension ${version}",
+            "before:bump": "bash ./bin/create-release.sh rich-text-extension ${version}",
             "after:bump": "bash ./bin/create-zip.sh rich-text-extension",
             "after:release": "bash ./bin/cleanup.sh rich-text-extension"
-        },
+        },,
         "github": {
             "release": true,
             "assets": [
