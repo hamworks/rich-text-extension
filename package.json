@@ -21,7 +21,7 @@
             "before:bump": "bash ./bin/create-release.sh rich-text-extension ${version}",
             "after:bump": "bash ./bin/create-zip.sh rich-text-extension",
             "after:release": "bash ./bin/cleanup.sh rich-text-extension"
-        },,
+        },
         "github": {
             "release": true,
             "assets": [
