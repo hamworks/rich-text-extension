@@ -1,7 +1,7 @@
 # Rich Text Extension
-Contributors:      Toro_Unit
+Contributors:      Toro_Unit,h2ham
 Donate link:       https://www.paypal.me/torounit
-Tags:              rich-text
+Tags:              Gutenberg, advanced, rich text, editor, formatting, writing
 Requires at least: 5.5
 Tested up to:      5.5
 Requires PHP:      7.2
@@ -13,7 +13,9 @@ Rich Text Extension
 
 ## Description
 
-Rich Text Extension
+Expand Rich Text. 
+
+* Inline Background Color.
 
 ## Changelog
 
