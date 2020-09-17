@@ -31,7 +31,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
     - name: build
-      run: bash ./bin/build.sh user-profile-block nightly
+      run:  bash ./bin/create-release.sh rich-text-extension nigltly
 
     - name: Github Build & Deploy Action
       uses: jeoy/github-deploy-actions@v1.0.1
@@ -41,4 +41,4 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BASE_BRANCH: master
         DEPLOY_BRANCH: nightly
-        FOLDER: nightly
+        FOLDER: distribution
