@@ -9,7 +9,7 @@
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:     rich-text-extension
  * Domain Path:     /languages
- * Version: nigltly
+ * Version: 0.0.3
  */
 
 add_action( 'enqueue_block_editor_assets', function() {
