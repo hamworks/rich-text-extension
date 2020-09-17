@@ -19,10 +19,9 @@ sed -i.bak -e "s/^ \* Version: .*/ * Version: ${version}/g" ${pluginname}.php;
 sed -i.bak -e "s/^ \* @version .*/ * @version ${version}/g" ${pluginname}.php;
 rm ${pluginname}.php.bak
 
-if [ -e "bin/build.sh" ]; then
-	echo "Starting bin/build.sh."
-	bash bin/build.sh
-fi
+SCRIPT_DIR=$(dirname $0);
+
+. ${SCRIPT_DIR}/build.sh
 
 rsync -a --exclude-from=.distignore ./ ./distribution/
 
