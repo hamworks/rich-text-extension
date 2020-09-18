@@ -31,7 +31,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
     - name: build
-      run:  bash ./bin/create-release.sh rich-text-extension nigltly
+      run:  bash ./bin/create-release.sh rich-text-extension nightly
 
     - name: Github Build & Deploy Action
       uses: jeoy/github-deploy-actions@v1.0.1
