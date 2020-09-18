@@ -1,6 +1,6 @@
 {
     "name": "@hamworks/rich-text-extension",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "author": "Hiroshi Urabe <urabe@ham.works> (https://ham.works)",
     "dependencies": {
         "@wordpress/block-editor": "^4.4.0",
