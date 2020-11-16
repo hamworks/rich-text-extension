@@ -1,15 +1,14 @@
 /**
  * External dependencies
  */
-import { get, isEmpty } from 'lodash';
+import { isEmpty } from 'lodash';
 import tinycolor from 'tinycolor2';
 
 /**
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { useSelect } from '@wordpress/data';
-import { useCallback, useMemo, useState } from '@wordpress/element';
+import { useMemo } from '@wordpress/element';
 import {
 	RichTextToolbarButton,
 	__experimentalUseEditorFeature as useEditorFeature,
@@ -21,33 +20,21 @@ import { removeFormat } from '@wordpress/rich-text';
  * Internal dependencies
  */
 import { default as InlineColorUI, getActiveColor } from './inline';
+import { useAddingColorState, useColors } from '../shared/hooks';
 
 const name = 'rich-text-extension/text-background-color';
 const title = __( 'Text Background Color' );
 
-const EMPTY_ARRAY = [];
-
 function TextColorEdit( { value, onChange, isActive, activeAttributes } ) {
 	const allowCustomControl = useEditorFeature( 'color.custom' );
-	const { colors } = useSelect( ( select ) => {
-		const blockEditorSelect = select( 'core/block-editor' );
-		let settings;
-		if ( blockEditorSelect && blockEditorSelect.getSettings ) {
-			settings = blockEditorSelect.getSettings();
-		} else {
-			settings = {};
-		}
-		return {
-			colors: get( settings, [ 'colors' ], EMPTY_ARRAY ),
-		};
-	} );
-	const [ isAddingColor, setIsAddingColor ] = useState( false );
-	const enableIsAddingColor = useCallback( () => setIsAddingColor( true ), [
-		setIsAddingColor,
-	] );
-	const disableIsAddingColor = useCallback( () => setIsAddingColor( false ), [
-		setIsAddingColor,
-	] );
+
+	const colors = useColors();
+
+	const {
+		isAddingColor,
+		enableIsAddingColor,
+		disableIsAddingColor,
+	} = useAddingColorState();
 
 	const colorIndicatorStyle = useMemo( () => {
 		const activeColor = getActiveColor( name, value, colors );

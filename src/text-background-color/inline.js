@@ -16,7 +16,7 @@ import {
 } from '@wordpress/block-editor';
 
 import ColorPopoverAtLink from '../shared/components/ColorPopoverAtLink';
-import useColors from '../shared/hooks';
+import { useColors } from '../shared/hooks';
 
 const colorContextName = 'background-color';
 const cssProperty = 'background-color';

@@ -16,6 +16,11 @@ Rich Text Extension
 Expand Rich Text. 
 
 * Inline Background Color.
+* Highlighter Effect.
+
+### Credits
+
+Icons - [Font Awesome](https://fontawesome.com/) (CC BY 4.0)
 
 ## Changelog
 

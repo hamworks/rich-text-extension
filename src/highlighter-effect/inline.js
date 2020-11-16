@@ -20,11 +20,11 @@ import {
 	getColorObjectByAttributeValues,
 } from '@wordpress/block-editor';
 
-const colorContextName = 'marker-pen-effect';
-const cssProperty = '--marker-pen-effect';
+const colorContextName = 'highlighter-effect';
+const cssProperty = '--highlighter-effect';
 
 import ColorPopoverAtLink from '../shared/components/ColorPopoverAtLink';
-import useColors from '../shared/hooks';
+import { useColors } from '../shared/hooks';
 
 export function getActiveColor( formatName, formatValue, colors ) {
 	const activeColorFormat = getActiveFormat( formatValue, formatName );

@@ -1,0 +1,7 @@
+:root {
+	--highlighter-effect: #ff6;
+}
+
+.has-highlighter-effect {
+	background: linear-gradient(transparent 60%, var(--highlighter-effect) 60%);
+}

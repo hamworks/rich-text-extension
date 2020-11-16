@@ -1,7 +1,0 @@
-:root {
-	--marker-pen-effect: #ffff66;
-}
-
-.has-marker-pen-effect {
-	background: linear-gradient(transparent 60%, var(--marker-pen-effect) 60%);
-}
