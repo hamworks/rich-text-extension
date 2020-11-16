@@ -9,7 +9,7 @@
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:     rich-text-extension
  * Domain Path:     /languages
- * Version: 0.0.5
+ * Version: 0.0.6
  */
 
 add_action(
