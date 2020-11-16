@@ -43,6 +43,7 @@
         "build:dev": "wp-scripts build",
         "format-js": "wp-scripts format-js",
         "env": "wp-scripts env",
+        "lint-php": "./vendor/bin/phpcs --standard=./.phpcs.xml.dist",
         "lint-style": "wp-scripts lint-style src",
         "lint-style:fix": "npm run lint-style -- --fix",
         "lint-js": "wp-scripts lint-js src",
