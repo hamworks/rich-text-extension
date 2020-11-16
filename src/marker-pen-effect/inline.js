@@ -1,4 +1,9 @@
 /**
+ * External dependencies
+ */
+import { pickBy } from 'lodash';
+
+/**
  * WordPress dependencies
  */
 import { useCallback, useMemo } from '@wordpress/element';
@@ -15,11 +20,11 @@ import {
 	getColorObjectByAttributeValues,
 } from '@wordpress/block-editor';
 
+const colorContextName = 'marker-pen-effect';
+const cssProperty = '--marker-pen-effect';
+
 import ColorPopoverAtLink from '../shared/components/ColorPopoverAtLink';
 import useColors from '../shared/hooks';
-
-const colorContextName = 'background-color';
-const cssProperty = 'background-color';
 
 export function getActiveColor( formatName, formatValue, colors ) {
 	const activeColorFormat = getActiveFormat( formatValue, formatName );
@@ -49,16 +54,13 @@ const ColorPicker = ( { name, value, onChange } ) => {
 				onChange(
 					applyFormat( value, {
 						type: name,
-						attributes: colorObject
-							? {
-									class: getColorClassName(
-										colorContextName,
-										colorObject.slug
-									),
-							  }
-							: {
-									style: `${ cssProperty }:${ color }`,
-							  },
+						attributes: pickBy( {
+							class: getColorClassName(
+								colorContextName,
+								colorObject?.slug
+							),
+							style: `${ cssProperty }:${ color }`,
+						} ),
 					} )
 				);
 			} else {
@@ -84,13 +86,7 @@ const InlineColorUI = ( { name, value, onChange, onClose, addingColor } ) => {
 			onClose={ onClose }
 			className="components-inline-color-popover"
 		>
-			<ColorPicker
-				name={ name }
-				value={ value }
-				onChange={ onChange }
-				cssProperty={ cssProperty }
-				colorContextName={ colorContextName }
-			/>
+			<ColorPicker name={ name } value={ value } onChange={ onChange } />
 		</ColorPopoverAtLink>
 	);
 };

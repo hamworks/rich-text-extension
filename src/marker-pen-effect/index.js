@@ -21,9 +21,10 @@ import { removeFormat } from '@wordpress/rich-text';
  * Internal dependencies
  */
 import { default as InlineColorUI, getActiveColor } from './inline';
+import './index.css';
 
-const name = 'rich-text-extension/text-background-color';
-const title = __( 'Text Background Color' );
+const name = 'rich-text-extension/marker-pen-effect';
+const title = __( 'Marker pen effect' );
 
 const EMPTY_ARRAY = [];
 
@@ -98,11 +99,11 @@ function TextColorEdit( { value, onChange, isActive, activeAttributes } ) {
 	);
 }
 
-const settings = {
+export const settings = {
 	name,
 	title,
-	tagName: 'span',
-	className: 'has-inline-background-color',
+	tagName: 'em',
+	className: 'has-marker-pen-effect',
 	attributes: {
 		style: 'style',
 		class: 'class',

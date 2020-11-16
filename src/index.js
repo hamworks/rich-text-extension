@@ -1,5 +1,6 @@
 import { registerFormatType } from '@wordpress/rich-text';
-import { textBackGroundColor } from './text-background-color';
+import textBackGroundColor from './text-background-color';
+import markerPenEffect from './marker-pen-effect';
 
-const { name } = textBackGroundColor;
-registerFormatType( name, textBackGroundColor );
+registerFormatType( textBackGroundColor.name, textBackGroundColor );
+registerFormatType( markerPenEffect.name, markerPenEffect );

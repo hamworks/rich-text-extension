@@ -21,4 +21,10 @@ add_action( 'enqueue_block_editor_assets', function() {
 		$asset_file['version'],
 		true
 	);
+	wp_enqueue_style(
+		'rich-text-extension',
+		plugins_url( 'build/index.css', __FILE__ ),
+		array(),
+		$asset_file['version']
+	);
 } );
