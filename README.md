@@ -24,6 +24,9 @@ Icons - [Font Awesome](https://fontawesome.com/) (CC BY 4.0)
 
 ## Changelog
 
+### 1.0.0
+* WordPress 5.8 support.
+
 ### 0.0.5
 * fix readme.
 
