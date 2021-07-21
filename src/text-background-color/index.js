@@ -9,10 +9,7 @@ import tinycolor from 'tinycolor2';
  */
 import { __ } from '@wordpress/i18n';
 import { useMemo } from '@wordpress/element';
-import {
-	RichTextToolbarButton,
-	__experimentalUseEditorFeature as useEditorFeature,
-} from '@wordpress/block-editor';
+import { RichTextToolbarButton, useSetting } from '@wordpress/block-editor';
 import { Icon, brush } from '@wordpress/icons';
 import { removeFormat } from '@wordpress/rich-text';
 
@@ -26,7 +23,7 @@ const name = 'rich-text-extension/text-background-color';
 const title = __( 'Text Background Color' );
 
 function TextColorEdit( { value, onChange, isActive, activeAttributes } ) {
-	const allowCustomControl = useEditorFeature( 'color.custom' );
+	const allowCustomControl = useSetting( 'color.custom' );
 
 	const colors = useColors();
 
