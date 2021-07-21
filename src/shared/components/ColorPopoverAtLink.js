@@ -7,7 +7,7 @@ const ColorPopoverAtLink = ( { addingColor, ...props } ) => {
 	// The first popover will always be dismounted when a click outside happens, so we can store the
 	// anchor Rect during the lifetime of the component.
 	const anchorRect = useMemo( () => {
-		const selection = window.getSelection();
+		const selection = document.defaultView.getSelection();
 		const range =
 			selection.rangeCount > 0 ? selection.getRangeAt( 0 ) : null;
 		if ( ! range ) {
